@@ -1,0 +1,54 @@
+Lab 4 README:       (Created by Joshua Cohen)
+
+PHP FILE(S):
+    lab4.php
+        Consists of all HTML, CSS, and Javascript code
+        Contains Log handling for php form login
+    registration.php
+        responsible for user registration 
+    schedule.php
+        responsible for creating message records and scheduling emails to be sent
+    mailer.php
+        responsible for sending mails that have been scheduled
+
+SQL FILE(S):
+	lab4.sql
+		mySQL dump of my database. This can be used for testing using the existing schema I created
+    
+Project completeness
+    Pretty much everything is complete. No forms make the page refresh
+    Cron job was made and tested through windows task manager
+        set time for every 30 minutes to invoke mailer.php
+
+Current Bugs
+    At the moment, the only bug is some of the css classes are not being called...
+        I needed to put some style attrubutes on the headers of the respective HTML elements
+
+Needed to make an email account for the purpose of this lab. I was having issues letting mail run without an account to set it up
+	email account:
+		username: lab4testcomp484@gmail.com
+		password: comp484lab4
+
+Server used:
+	xampp
+		->has a send mail account requirement (if you add this code into the ini files of your xampp server, then the mail will be sent properly)
+			->I will provide you the code i used for the ini files
+			->If you are using xampp:
+				php.ini
+					[mail function]
+					SMTP=smtp.gmail.com
+					smtp_port=465
+					sendmail_from=lab4testcomp484@gmail.com
+					sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+
+				sendmail.ini
+					[sendmail]
+					smtp_server=smtp.gmail.com
+					smtp_port=465
+					error_logfile=error.log
+					debug_logfile=debug.log
+					auth_username=lab4testcomp484@gmail.com
+					auth_password=oljlankeobafribo
+					force_sender=lab4testcomp484@gmail.com
+ 
+    
